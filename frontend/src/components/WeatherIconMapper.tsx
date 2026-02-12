@@ -57,12 +57,13 @@ const WEATHER_ICON_MAP: Record<number, { icon: LucideIcon; color: string }> = {
 
 interface IWeatherIconProps {
   code: number;
+  className?: string;
 }
 
-export function WeatherIcon({ code }: IWeatherIconProps) {
+export function WeatherIcon({ code, className }: IWeatherIconProps) {
   const { icon: Icon, color } = WEATHER_ICON_MAP[code] ?? {
     icon: Sun,
     color: "text-yellow-300",
   };
-  return <Icon className={`h-10 w-10 ${color}`} />;
+  return <Icon className={`${color} ${className}`} />;
 }

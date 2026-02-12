@@ -1,7 +1,7 @@
 import type { IForecast } from "../@types";
 import { NavigationIcon } from "lucide-react";
 import moment from "moment";
-import { WeatherIcon } from "./weatherIconMapper";
+import { WeatherIcon } from "./WeatherIconMapper";
 interface IForecastCardProps {
   data: IForecast;
 }
@@ -14,7 +14,10 @@ function ForecastCard({ data }: IForecastCardProps) {
       </span>
 
       {/* <SunIcon className="w-10 h-10 text-yellow-300" /> */}
-      <WeatherIcon code={data.weatherIcon} />
+      <WeatherIcon
+        className="h-8 w-8 max-sm:h-6 max-sm:w-6"
+        code={data.weatherIcon}
+      />
 
       <span className="text-lg font-semibold">{data.tempF}°F</span>
 

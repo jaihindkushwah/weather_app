@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 import type { IWeatherData } from "@/@types";
-import { WeatherIcon } from "./weatherIconMapper";
+import { WeatherIcon } from "./WeatherIconMapper";
 // import { getWeatherIcon } from "./weatherIconMapper";
 
 interface IProps {
@@ -45,7 +45,10 @@ function WeatherCard({ data }: IProps) {
         </div>
 
         <div className="flex flex-col items-center justify-center flex-1">
-          <WeatherIcon code={data.weatherIcon} />
+          <WeatherIcon
+            className="h-16 w-16 max-sm:h-10 max-sm:w-10"
+            code={data.weatherIcon}
+          />
           <p className="text-xl font-semibold mt-2">{data.weatherText}</p>
         </div>
 
